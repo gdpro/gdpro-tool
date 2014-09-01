@@ -15,19 +15,38 @@ use Rhumsaa\Uuid\Exception\UnsatisfiedDependencyException;
 class Uuid
 {
     /**
+     * Create a UUID v1
+     *
+     */
+    static public function v1()
+    {
+        try {
+            $uuid = RhumsaaUuid::uuid1();
+            $uuidString = $uuid->toString();
+
+        } catch (UnsatisfiedDependencyException $exc) {
+            throw new \Exception(__METHOD__.': Some dependency was not met or the method cannot be called on a 32 bit
+            system.', $exc);
+        }
+
+        return $uuidString;
+    }
+
+    /**
      * Create a UUID v5
      *
      */
     static public function v5()
     {
         try {
-            $uuid5 = RhumsaaUuid::uuid5(RhumsaaUuid::NAMESPACE_DNS, 'php.net');
-            $uuid5String = $uuid5->toString();
+            $uuid = RhumsaaUuid::uuid5(RhumsaaUuid::NAMESPACE_DNS, 'php.net');
+            $uuidString = $uuid->toString();
 
         } catch (UnsatisfiedDependencyException $exc) {
             throw new \Exception(__METHOD__.': Some dependency was not met or the method cannot be called on a 32 bit
             system.', $exc);
         }
-        return $uuid5String;
+
+        return $uuidString;
     }
 }
