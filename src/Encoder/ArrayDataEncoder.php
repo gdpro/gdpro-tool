@@ -21,5 +21,7 @@ class ArrayDataEncoder
 
             return $data;
         }
+
+        return null;
     }
 }
