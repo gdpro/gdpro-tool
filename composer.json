@@ -11,7 +11,7 @@
     "require": {
         "php": ">=5.5.8",
         "zendframework/zendframework": "dev-master",
-        "ramsey/uuid": "~2.8.0"
+        "ramsey/uuid": "2.8.2"
     },
     "minimum-stability": "dev",
     "autoload": {
