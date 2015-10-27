@@ -10,17 +10,19 @@
     ],
     "require": {
         "php": ">=5.5.8",
-        "zendframework/zendframework": "dev-master",
-        "ramsey/uuid": "2.8"
+        "zendframework/zendframework": "~2.5.2",
+        "ramsey/uuid": "~2.8"
     },
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
-            "GdproTool\\": "src/",
-            "GdproToolTest\\": "test/"
+            "GdproTool\\": "src/"
         },
         "classmap": [
             "Module.php"
         ]
+    },
+    "autoload-dev": {
+        "GdproToolTest\\": "test/"
     }
 }
